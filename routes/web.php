@@ -32,7 +32,7 @@ Route::get('/callback', function (Request $request) {
         'form_params' => [
             'grant_type' => 'authorization_code',
             'client_id' => '1',
-            'client_secret' => 'OXm4jwrBtLSolOpr0RXCR3Coymjm8F5FTKqevf6s',
+            'client_secret' => '5q968WcpFvBMPzYHv0WOk50xnlfcEUEFgntlNURg	',
             'redirect_uri' => 'http://www.topcatclients.com/consumer/callback',
             'code' => $request->code,
         ],
