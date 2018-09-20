@@ -16,24 +16,24 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     $query = http_build_query([
         'client_id' => '1',
-        'redirect_uri' => 'http://consumer.nhs/callback',
+        'redirect_uri' => 'http://www.topcatclients.com/consumer/callback',
         'response_type' => 'code',
         'scope' => '',
     ]);
 
-    return redirect('http://laravel-passport.nhs/oauth/authorize?'.$query);
+    return redirect('http://www.topcatclients.com/technical-task/oauth/authorize?'.$query);
 });
 
 Route::get('/callback', function (Request $request) {
 
     $http = new GuzzleHttp\Client;
 
-    $response = $http->post('http://laravel-passport.nhs/oauth/token', [
+    $response = $http->post('http://www.topcatclients.com/technical-task/oauth/token', [
         'form_params' => [
             'grant_type' => 'authorization_code',
             'client_id' => '1',
             'client_secret' => 'OXm4jwrBtLSolOpr0RXCR3Coymjm8F5FTKqevf6s',
-            'redirect_uri' => 'http://consumer.nhs/callback',
+            'redirect_uri' => 'http://www.topcatclients.com/consumer/callback',
             'code' => $request->code,
         ],
     ]);
